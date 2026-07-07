@@ -1,0 +1,187 @@
+{
+  "name": "ADO test",
+  "description": "",
+  "version": 5,
+  "private": true,
+  "concurrency": 1,
+  "code": {
+    "number": 0,
+    "provider": "azure_dev_ops_connector_3332437_1740683862",
+    "name": "updated_work_item",
+    "as": "fadd39b2",
+    "keyword": "trigger",
+    "input": {
+    },
+    "block": [
+      {
+        "number": 1,
+        "keyword": "try",
+        "input": {
+        },
+        "block": [
+          {
+            "number": 2,
+            "provider": "workato_db_table",
+            "name": "get_records",
+            "as": "e7db25f6",
+            "keyword": "action",
+            "dynamicPickListSelection": {
+              "table_id": "test table",
+              "order_by_field_id": "Record ID"
+            },
+            "input": {
+              "order_direction": "asc",
+              "limit": "10",
+              "table_id": {
+                "zip_name": "Z_Azure DevOps connector test/Ricardo Test/test_table.workato_db_table.json",
+                "name": "test table",
+                "folder": "Z_Azure DevOps connector test/Ricardo Test",
+                "folder_full_path": "Home/Ricardo Test"
+              },
+              "6992323f-c680-49e8-ba8a-20db6a7daeb0": "string",
+              "182ca99d-7f9e-4ceb-9f45-fec70d2160cb": "string",
+              "11fbe9a6-a16d-4d7e-86ea-afe42ec03005": "id",
+              "a5612739-5401-4ae7-bd07-782c1a6fb2d1": "date_time",
+              "61aae604-a95e-4519-9091-bb0bf754a67f": "date_time",
+              "order_by_field_id": "11fbe9a6-a16d-4d7e-86ea-afe42ec03005"
+            },
+            "extended_output_schema": [
+              {
+                "label": "Records",
+                "name": "records",
+                "of": "object",
+                "properties": [
+                  {
+                    "control_type": "text",
+                    "label": "Record ID",
+                    "type": "string",
+                    "name": "11fbe9a6_a16d_4d7e_86ea_afe42ec03005"
+                  },
+                  {
+                    "control_type": "text",
+                    "label": "id",
+                    "type": "string",
+                    "name": "6992323f_c680_49e8_ba8a_20db6a7daeb0"
+                  },
+                  {
+                    "control_type": "text",
+                    "label": "value",
+                    "type": "string",
+                    "name": "182ca99d_7f9e_4ceb_9f45_fec70d2160cb"
+                  },
+                  {
+                    "control_type": "date_time",
+                    "label": "Created at",
+                    "render_input": "date_time_conversion",
+                    "parse_output": "date_time_conversion",
+                    "type": "date_time",
+                    "name": "a5612739_5401_4ae7_bd07_782c1a6fb2d1"
+                  },
+                  {
+                    "control_type": "date_time",
+                    "label": "Updated at",
+                    "render_input": "date_time_conversion",
+                    "parse_output": "date_time_conversion",
+                    "type": "date_time",
+                    "name": "61aae604_a95e_4519_9091_bb0bf754a67f"
+                  }
+                ],
+                "type": "array"
+              },
+              {
+                "control_type": "text",
+                "label": "Next Page Token",
+                "name": "continuation_token",
+                "type": "string"
+              }
+            ],
+            "extended_input_schema": [
+              {
+                "control_type": "text",
+                "default": "string",
+                "label": "$internal_value_6992323f-c680-49e8-ba8a-20db6a7daeb0",
+                "name": "6992323f-c680-49e8-ba8a-20db6a7daeb0",
+                "ngIf": "false",
+                "optional": true,
+                "type": "string"
+              },
+              {
+                "control_type": "text",
+                "default": "string",
+                "label": "$internal_value_182ca99d-7f9e-4ceb-9f45-fec70d2160cb",
+                "name": "182ca99d-7f9e-4ceb-9f45-fec70d2160cb",
+                "ngIf": "false",
+                "optional": true,
+                "type": "string"
+              },
+              {
+                "control_type": "text",
+                "default": "id",
+                "label": "$internal_value_11fbe9a6-a16d-4d7e-86ea-afe42ec03005",
+                "name": "11fbe9a6-a16d-4d7e-86ea-afe42ec03005",
+                "ngIf": "false",
+                "optional": true,
+                "type": "string"
+              },
+              {
+                "control_type": "text",
+                "default": "date_time",
+                "label": "$internal_value_a5612739-5401-4ae7-bd07-782c1a6fb2d1",
+                "name": "a5612739-5401-4ae7-bd07-782c1a6fb2d1",
+                "ngIf": "false",
+                "optional": true,
+                "type": "string"
+              },
+              {
+                "control_type": "text",
+                "default": "date_time",
+                "label": "$internal_value_61aae604-a95e-4519-9091-bb0bf754a67f",
+                "name": "61aae604-a95e-4519-9091-bb0bf754a67f",
+                "ngIf": "false",
+                "optional": true,
+                "type": "string"
+              }
+            ],
+            "uuid": "d237e42e-df7c-46d7-baa9-e610d872fd9c"
+          },
+          {
+            "number": 3,
+            "as": "40bc63c1",
+            "keyword": "catch",
+            "input": {
+              "max_retry_count": "0",
+              "retry_interval": "2"
+            },
+            "block": [
+              {
+                "number": 4,
+                "keyword": "action",
+                "input": {
+                },
+                "uuid": "4529db2c-8d46-459c-8172-7995bbfcf685"
+              }
+            ],
+            "uuid": "da5565a6-5881-439f-9321-34623b85f19d"
+          }
+        ],
+        "uuid": "d4be465f-e516-45d4-a76d-dd4bb6884ab7"
+      }
+    ],
+    "uuid": "7e04dda5-3c88-427c-a31d-04bd49fb28a6"
+  },
+  "config": [
+    {
+      "keyword": "application",
+      "provider": "workato_db_table",
+      "skip_validation": false,
+      "account_id": null
+    },
+    {
+      "keyword": "application",
+      "provider": "azure_dev_ops_connector_3332437_1740683862",
+      "skip_validation": false,
+      "provider_title": "Azure DevOps",
+      "account_id": null
+    }
+  ]
+}

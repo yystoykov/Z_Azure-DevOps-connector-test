@@ -1,0 +1,9 @@
+{
+  "name": "My Azure DevOps Reset Test Connector account",
+  "provider": {
+    "zip_name": "azure_devops_reset_test_connector.custom_adapter.json",
+    "name": "Azure DevOps Reset Test Connector",
+    "folder": ""
+  },
+  "root_folder": false
+}
