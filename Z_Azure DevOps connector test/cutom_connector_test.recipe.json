@@ -1,0 +1,155 @@
+{
+  "name": "Cutom connector test",
+  "description": "",
+  "version": 8,
+  "private": true,
+  "concurrency": 1,
+  "code": {
+    "number": 0,
+    "provider": "azure_dev_ops_custom_service_principal_test__connector_3332437_1782727702",
+    "name": "new_event",
+    "as": "f94d26e9",
+    "title": null,
+    "description": null,
+    "keyword": "trigger",
+    "input": {
+    },
+    "block": [
+      {
+        "number": 1,
+        "keyword": "try",
+        "input": {
+        },
+        "block": [
+          {
+            "number": 2,
+            "provider": "logger",
+            "name": "log_message",
+            "as": "35ab1a53",
+            "keyword": "action",
+            "input": {
+              "user_logs_enabled": "false",
+              "message": "We are in the monitor block - ID: #{_dp('{\"pill_type\":\"output\",\"provider\":\"azure_dev_ops_custom_service_principal_test__connector_3332437_1782727702\",\"line\":\"f94d26e9\",\"path\":[\"id\"]}')}and #{_dp('{\"pill_type\":\"output\",\"provider\":\"azure_dev_ops_custom_service_principal_test__connector_3332437_1782727702\",\"line\":\"f94d26e9\",\"path\":[\"connector_version\"]}')}"
+            },
+            "extended_input_schema": [
+              {
+                "control_type": "switch",
+                "default": false,
+                "disable_formula": true,
+                "extends_schema": true,
+                "hint": "Send a copy of the message to Workato logs.\n<a href=\"https://docs.workato.com/features/logging-service.html\" target=\"_blank\" class=\"ng-scope\">\n  Learn more\n</a>\n",
+                "label": "Send to Workato log service",
+                "name": "user_logs_enabled",
+                "optional": true,
+                "type": "string"
+              }
+            ],
+            "uuid": "f3d4a8ce-925f-4519-824f-08adb43d8d84"
+          },
+          {
+            "number": 3,
+            "provider": "workato_db_table",
+            "name": "get_records",
+            "as": "46ab4076",
+            "keyword": "action",
+            "input": {
+              "order_direction": "asc",
+              "limit": "100"
+            },
+            "uuid": "b04900a7-e7c5-4e41-96b9-7d5d3557b7f1",
+            "skip": true
+          },
+          {
+            "number": 4,
+            "as": "72450bb9",
+            "keyword": "catch",
+            "input": {
+              "max_retry_count": "0",
+              "retry_interval": "2"
+            },
+            "block": [
+              {
+                "number": 5,
+                "provider": "logger",
+                "name": "log_message",
+                "as": "f50b6e63",
+                "keyword": "action",
+                "input": {
+                  "user_logs_enabled": "false",
+                  "message": "Error type: #{_dp('{\"pill_type\":\"output\",\"provider\":\"catch\",\"line\":\"72450bb9\",\"path\":[\"type\"]}')}\nError message: #{_dp('{\"pill_type\":\"output\",\"provider\":\"catch\",\"line\":\"72450bb9\",\"path\":[\"message\"]}')}"
+                },
+                "extended_input_schema": [
+                  {
+                    "control_type": "switch",
+                    "default": false,
+                    "disable_formula": true,
+                    "extends_schema": true,
+                    "hint": "Send a copy of the message to Workato logs.\n<a href=\"https://docs.workato.com/features/logging-service.html\" target=\"_blank\" class=\"ng-scope\">\n  Learn more\n</a>\n",
+                    "label": "Send to Workato log service",
+                    "name": "user_logs_enabled",
+                    "optional": true,
+                    "type": "string"
+                  }
+                ],
+                "uuid": "6cf44d80-53a9-4d1e-b034-dcfe6cf12127"
+              }
+            ],
+            "uuid": "7d066eb9-d326-4a0a-9bd8-76372c117b0d"
+          }
+        ],
+        "uuid": "9524179c-5371-4854-9bfd-d14d433ae77f"
+      },
+      {
+        "number": 6,
+        "provider": "logger",
+        "name": "log_message",
+        "as": "11780581",
+        "keyword": "action",
+        "input": {
+          "user_logs_enabled": "false",
+          "message": "Succesfully finished - ID: #{_dp('{\"pill_type\":\"output\",\"provider\":\"azure_dev_ops_custom_service_principal_test__connector_3332437_1782727702\",\"line\":\"f94d26e9\",\"path\":[\"id\"]}')}"
+        },
+        "extended_input_schema": [
+          {
+            "control_type": "switch",
+            "default": false,
+            "disable_formula": true,
+            "extends_schema": true,
+            "hint": "Send a copy of the message to Workato logs.\n<a href=\"https://docs.workato.com/features/logging-service.html\" target=\"_blank\" class=\"ng-scope\">\n  Learn more\n</a>\n",
+            "label": "Send to Workato log service",
+            "name": "user_logs_enabled",
+            "optional": true,
+            "type": "string"
+          }
+        ],
+        "uuid": "75ae74a8-5e93-4621-a7a2-4097efaddbf8"
+      }
+    ],
+    "uuid": "c4ab8383-205d-481e-a703-6a031febd712"
+  },
+  "config": [
+    {
+      "keyword": "application",
+      "provider": "workato_db_table",
+      "skip_validation": true,
+      "account_id": null
+    },
+    {
+      "keyword": "application",
+      "provider": "azure_dev_ops_custom_service_principal_test__connector_3332437_1782727702",
+      "skip_validation": false,
+      "account_id": {
+        "zip_name": "Z_Azure DevOps connector test/my_azure_devops_reset_test_connector_account.connection.json",
+        "name": "My Azure DevOps Reset Test Connector account",
+        "folder": "Z_Azure DevOps connector test",
+        "custom": true
+      }
+    },
+    {
+      "keyword": "application",
+      "provider": "logger",
+      "skip_validation": false,
+      "account_id": null
+    }
+  ]
+}
